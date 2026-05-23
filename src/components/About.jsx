@@ -1,5 +1,7 @@
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { MdLocationOn, MdEmail, MdPhone } from 'react-icons/md';
+import { FaGithub } from 'react-icons/fa';
 import '../styles/About.css';
 
 export default function About() {
@@ -29,14 +31,14 @@ export default function About() {
           <p className="about-text">{t.about.text}</p>
           <div className="about-info">
             <div className="info-item">
-              <span className="info-icon">📍</span>
+              <span className="info-icon"><MdLocationOn /></span>
               <div>
                 <span className="info-label">Location</span>
                 <span className="info-value">{t.about.location}</span>
               </div>
             </div>
             <div className="info-item">
-              <span className="info-icon">📧</span>
+              <span className="info-icon"><MdEmail /></span>
               <div>
                 <span className="info-label">Email</span>
                 <a href="mailto:javohirtojaliyev15@gmail.com" className="info-value info-link">
@@ -45,7 +47,7 @@ export default function About() {
               </div>
             </div>
             <div className="info-item">
-              <span className="info-icon">📱</span>
+              <span className="info-icon"><MdPhone /></span>
               <div>
                 <span className="info-label">Phone</span>
                 <a href="tel:+998501003059" className="info-value info-link">
@@ -54,7 +56,7 @@ export default function About() {
               </div>
             </div>
             <div className="info-item">
-              <span className="info-icon">🐙</span>
+              <span className="info-icon"><FaGithub /></span>
               <div>
                 <span className="info-label">GitHub</span>
                 <a

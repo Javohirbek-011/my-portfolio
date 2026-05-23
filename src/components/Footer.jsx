@@ -1,10 +1,12 @@
 import { useLang } from '../context/LanguageContext';
+import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 import '../styles/Footer.css';
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/Javohirbek-011' },
-  { label: 'Telegram', href: 'https://t.me/javohirbek_011' },
-  { label: 'Email', href: 'mailto:javohirtojaliyev15@gmail.com' },
+  { label: 'GitHub', icon: <FaGithub />, href: 'https://github.com/Javohirbek-011' },
+  { label: 'Telegram', icon: <FaTelegramPlane />, href: 'https://t.me/javohirbekjonn' },
+  { label: 'Email', icon: <MdEmail />, href: 'mailto:javohirtojaliyev15@gmail.com' },
 ];
 
 export default function Footer() {
@@ -21,10 +23,12 @@ export default function Footer() {
                 key={s.label}
                 href={s.href}
                 className="footer-social-link"
+                title={s.label}
                 target={s.href.startsWith('http') ? '_blank' : undefined}
                 rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
-                {s.label}
+                <span className="footer-social-icon">{s.icon}</span>
+                <span>{s.label}</span>
               </a>
             ))}
           </div>

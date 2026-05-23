@@ -1,5 +1,6 @@
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
 import '../styles/Projects.css';
 
 export default function Projects() {
@@ -17,7 +18,7 @@ export default function Projects() {
         {t.projects.items.map((project, i) => (
           <div key={i} className="project-card reveal">
             <div className="project-card-header">
-              <span className="project-icon">⬡</span>
+              <span className="project-icon"><FaCode /></span>
               <div className="project-links">
                 {project.github && (
                   <a
@@ -26,7 +27,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="project-link"
                   >
-                    {t.projects.btnGithub}
+                    <FaGithub /> {t.projects.btnGithub}
                   </a>
                 )}
                 {project.live && (
@@ -36,7 +37,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="project-link project-link-live"
                   >
-                    {t.projects.btnLive} ↗
+                    <FaExternalLinkAlt /> {t.projects.btnLive}
                   </a>
                 )}
               </div>
