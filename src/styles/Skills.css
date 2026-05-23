@@ -1,0 +1,38 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.skill-group-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--accent-indigo);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  padding: 8px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+  transform: translateY(-2px);
+}

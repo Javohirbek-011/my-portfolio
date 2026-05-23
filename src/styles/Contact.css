@@ -1,0 +1,50 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px 28px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--glow);
+  transform: translateY(-3px);
+}
+
+.contact-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  display: block;
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  display: block;
+  font-size: 14px;
+  color: var(--accent-blue);
+  font-family: 'Fira Code', monospace;
+}
+
+@media (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

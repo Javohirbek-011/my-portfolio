@@ -1,0 +1,62 @@
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experience-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 28px 32px;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--glow);
+}
+
+.experience-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 16px;
+}
+
+.experience-role {
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.experience-company {
+  font-size: 13px;
+  color: var(--accent-blue);
+}
+
+.experience-year {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--accent-indigo);
+  letter-spacing: 2px;
+  white-space: nowrap;
+  padding: 4px 12px;
+  border: 1px solid rgba(129, 140, 248, 0.25);
+  border-radius: 20px;
+}
+
+.experience-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .experience-header {
+    flex-direction: column;
+  }
+}
