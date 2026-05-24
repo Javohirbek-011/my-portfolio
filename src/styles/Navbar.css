@@ -17,14 +17,30 @@
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Premium logo box */
 .nav-logo {
+  text-decoration: none;
+}
+
+.nav-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent-blue);
+  border-radius: 6px;
   font-family: 'Fira Code', monospace;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--accent-blue);
-  text-decoration: none;
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
-  letter-spacing: 2px;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+  transition: background 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.nav-logo-box:hover {
+  background: rgba(56, 189, 248, 0.1);
 }
 
 .nav-links {
@@ -48,7 +64,29 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+}
+
+/* Resume button */
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  padding: 6px 14px;
+  border: 1px solid var(--accent-blue);
+  border-radius: 4px;
+  color: var(--accent-blue);
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.resume-btn:hover {
+  background: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
 }
 
 .lang-switcher {
@@ -112,5 +150,9 @@
 
   .navbar {
     padding: 16px 20px;
+  }
+
+  .resume-btn {
+    display: none;
   }
 }

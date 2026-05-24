@@ -1,7 +1,22 @@
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import '../styles/Projects.css';
+
+const projectVisuals = [
+  {
+    gradient: 'linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%)',
+    content: <span className="project-code-icon">&lt;/&gt;</span>,
+  },
+  {
+    gradient: 'linear-gradient(135deg, #0F172A 0%, #1F1035 100%)',
+    content: <span className="project-emoji">🎬</span>,
+  },
+  {
+    gradient: 'linear-gradient(135deg, #0F172A 0%, #0D2818 100%)',
+    content: <span className="project-emoji">✏️</span>,
+  },
+];
 
 export default function Projects() {
   useScrollReveal();
@@ -17,17 +32,28 @@ export default function Projects() {
       <div className="projects-grid">
         {t.projects.items.map((project, i) => (
           <div key={i} className="project-card reveal">
-            <div className="project-card-header">
-              <span className="project-icon"><FaCode /></span>
-              <div className="project-links">
+            <div
+              className="project-image"
+              style={{ background: projectVisuals[i]?.gradient }}
+            >
+              {projectVisuals[i]?.content}
+            </div>
+
+            <div className="project-body">
+              <h3 className="project-name">{project.name}</h3>
+              <div className="project-stack">{project.stack}</div>
+              <p className="project-desc">{project.desc}</p>
+
+              <div className="project-footer">
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="project-link"
+                    className="project-gh-link"
+                    title="GitHub"
                   >
-                    <FaGithub /> {t.projects.btnGithub}
+                    <FaGithub />
                   </a>
                 )}
                 {project.live && (
@@ -35,18 +61,26 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="project-link project-link-live"
+                    className="project-live-link"
                   >
                     <FaExternalLinkAlt /> {t.projects.btnLive}
                   </a>
                 )}
               </div>
             </div>
-            <h3 className="project-name">{project.name}</h3>
-            <p className="project-desc">{project.desc}</p>
-            <div className="project-stack">{project.stack}</div>
           </div>
         ))}
+      </div>
+
+      <div className="view-all-wrap">
+        <a
+          href="https://github.com/Javohirbek-011"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="view-all-btn"
+        >
+          <FaGithub /> View All Projects
+        </a>
       </div>
     </section>
   );

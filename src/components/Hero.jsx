@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLang } from '../context/LanguageContext';
+import { HiDownload } from 'react-icons/hi';
 import '../styles/Hero.css';
 
 export default function Hero() {
@@ -48,7 +49,13 @@ export default function Hero() {
 
       <div className="hero-content">
         <div className="hero-tag">// FRONTEND DEVELOPER</div>
-        <div className="hero-avatar">JT</div>
+
+        {/* Avatar with animated ring */}
+        <div className="hero-avatar-wrap">
+          <div className="hero-avatar-ring"></div>
+          <div className="hero-avatar">JT</div>
+        </div>
+
         <p className="hero-greeting">{t.hero.greeting}</p>
         <h1 className="hero-name">Javohirbek <span>Tojaliyev</span></h1>
         <div className="hero-typing">
@@ -65,6 +72,15 @@ export default function Hero() {
             {t.hero.btnGithub} →
           </a>
           <a href="#contact" className="btn-outline">{t.hero.btnContact}</a>
+          <a
+            href="/Javohirbek_CV.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline btn-resume"
+          >
+            <HiDownload /> Resume
+          </a>
         </div>
       </div>
     </section>

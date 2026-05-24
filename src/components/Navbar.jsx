@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLang } from '../context/LanguageContext';
+import { HiDownload } from 'react-icons/hi';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
@@ -24,7 +25,10 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <a href="#hero" className="nav-logo">JT</a>
+      {/* Premium logo */}
+      <a href="#hero" className="nav-logo">
+        <span className="nav-logo-box">JT</span>
+      </a>
 
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {links.map((link) => (
@@ -37,6 +41,17 @@ export default function Navbar() {
       </ul>
 
       <div className="nav-right">
+        {/* Resume button */}
+        <a
+          href="/Javohirbek_CV.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className="resume-btn"
+        >
+          <HiDownload /> Resume
+        </a>
+
         <div className="lang-switcher">
           {['uz', 'en', 'ru'].map((l) => (
             <button
