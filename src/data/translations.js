@@ -32,25 +32,28 @@ export const translations = {
       btnLive: "Live ko'rish",
       items: [
         {
-          name: "Codial Loyihalar",
+          name: "Mixel.uz",
           stack: "React.js · Tailwind CSS · JavaScript",
-          desc: "React.js orqali dinamik veb-sahifalar va Tailwind CSS bilan zamonaviy UI.",
-          github: "https://github.com/Javohirbek-011",
-          live: ""
+          desc: "Zamonaviy elektron tijorat platformasi. Mahsulot qidirish, solishtirish va savatcha funksiyalari bilan.",
+          github: "https://github.com/Javohirbek-011/mixel",
+          live: "https://mixxell.netlify.app/",
+          image: "/screenshots/mixel.png"
+        },
+        {
+          name: "Exclusive",
+          stack: "React.js · Tailwind CSS · JavaScript",
+          desc: "Figma dizaynidan qurilgan to'liq funksional e-commerce sayt. Flash sale, kategoriyalar va ko'p tilli interfeys.",
+          github: "https://github.com/Javohirbek-011/Exclusive",
+          live: "https://ecommercevfigma.netlify.app/",
+          image: "/screenshots/exclusive.png"
         },
         {
           name: "Movie App",
           stack: "JavaScript · HTML · CSS",
           desc: "JavaScript yordamida qurilgan kino qidirish ilovasi.",
           github: "https://github.com/Javohirbek-011/movie",
-          live: ""
-        },
-        {
-          name: "Figma → Code",
-          stack: "HTML · CSS",
-          desc: "Figma dizaynlarini pixel-perfect HTML/CSS ga aylantirish.",
-          github: "https://github.com/Javohirbek-011/Solo_Figma_First",
-          live: ""
+          live: "",
+          image: null
         }
       ]
     },
@@ -114,25 +117,28 @@ export const translations = {
       btnLive: "Live Demo",
       items: [
         {
-          name: "Codial Projects Portfolio",
+          name: "Mixel.uz",
           stack: "React.js · Tailwind CSS · JavaScript",
-          desc: "Built dynamic web pages with React.js and modern UI with Tailwind CSS.",
-          github: "https://github.com/Javohirbek-011",
-          live: ""
+          desc: "Modern e-commerce platform with product search, comparison and cart functionality.",
+          github: "https://github.com/Javohirbek-011/mixel",
+          live: "https://mixxell.netlify.app/",
+          image: "/screenshots/mixel.png"
+        },
+        {
+          name: "Exclusive",
+          stack: "React.js · Tailwind CSS · JavaScript",
+          desc: "Fully functional e-commerce site built from Figma design. Flash sales, categories and multilingual UI.",
+          github: "https://github.com/Javohirbek-011/Exclusive",
+          live: "https://ecommercevfigma.netlify.app/",
+          image: "/screenshots/exclusive.png"
         },
         {
           name: "Movie App",
           stack: "JavaScript · HTML · CSS",
           desc: "A movie search and browsing app built with JavaScript.",
           github: "https://github.com/Javohirbek-011/movie",
-          live: ""
-        },
-        {
-          name: "Figma to Code",
-          stack: "HTML · CSS",
-          desc: "Converted Figma designs into pixel-perfect HTML and CSS.",
-          github: "https://github.com/Javohirbek-011/Solo_Figma_First",
-          live: ""
+          live: "",
+          image: null
         }
       ]
     },
@@ -196,25 +202,28 @@ export const translations = {
       btnLive: "Демо",
       items: [
         {
-          name: "Портфолио Codial",
+          name: "Mixel.uz",
           stack: "React.js · Tailwind CSS · JavaScript",
-          desc: "Динамичные страницы на React.js и современный UI с Tailwind CSS.",
-          github: "https://github.com/Javohirbek-011",
-          live: ""
+          desc: "Современная e-commerce платформа с поиском товаров, сравнением и корзиной.",
+          github: "https://github.com/Javohirbek-011/mixel",
+          live: "https://mixxell.netlify.app/",
+          image: "/screenshots/mixel.png"
+        },
+        {
+          name: "Exclusive",
+          stack: "React.js · Tailwind CSS · JavaScript",
+          desc: "Полнофункциональный интернет-магазин по Figma-дизайну. Flash-распродажи, категории и мультиязычный интерфейс.",
+          github: "https://github.com/Javohirbek-011/Exclusive",
+          live: "https://ecommercevfigma.netlify.app/",
+          image: "/screenshots/exclusive.png"
         },
         {
           name: "Movie App",
           stack: "JavaScript · HTML · CSS",
           desc: "Приложение для поиска фильмов на JavaScript.",
           github: "https://github.com/Javohirbek-011/movie",
-          live: ""
-        },
-        {
-          name: "Figma → Код",
-          stack: "HTML · CSS",
-          desc: "Перевёл Figma-дизайны в pixel-perfect HTML/CSS.",
-          github: "https://github.com/Javohirbek-011/Solo_Figma_First",
-          live: ""
+          live: "",
+          image: null
         }
       ]
     },

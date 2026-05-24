@@ -3,19 +3,11 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import '../styles/Projects.css';
 
-const projectVisuals = [
-  {
-    gradient: 'linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%)',
-    content: <span className="project-code-icon">&lt;/&gt;</span>,
-  },
-  {
-    gradient: 'linear-gradient(135deg, #0F172A 0%, #1F1035 100%)',
-    content: <span className="project-emoji">🎬</span>,
-  },
-  {
-    gradient: 'linear-gradient(135deg, #0F172A 0%, #0D2818 100%)',
-    content: <span className="project-emoji">✏️</span>,
-  },
+// Fallback visuals for projects without screenshots
+const fallbackVisuals = [
+  { gradient: 'linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%)', content: <span className="project-code-icon">&lt;/&gt;</span> },
+  { gradient: 'linear-gradient(135deg, #0F172A 0%, #1F1035 100%)', content: <span className="project-emoji">🛍️</span> },
+  { gradient: 'linear-gradient(135deg, #0F172A 0%, #1F1035 100%)', content: <span className="project-emoji">🎬</span> },
 ];
 
 export default function Projects() {
@@ -32,12 +24,32 @@ export default function Projects() {
       <div className="projects-grid">
         {t.projects.items.map((project, i) => (
           <div key={i} className="project-card reveal">
-            <div
-              className="project-image"
-              style={{ background: projectVisuals[i]?.gradient }}
-            >
-              {projectVisuals[i]?.content}
-            </div>
+
+            {/* Screenshot or fallback */}
+            {project.image ? (
+              <a
+                href={project.live || project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-image project-image-link"
+              >
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="project-screenshot"
+                />
+                <div className="project-image-overlay">
+                  <FaExternalLinkAlt />
+                </div>
+              </a>
+            ) : (
+              <div
+                className="project-image"
+                style={{ background: fallbackVisuals[i]?.gradient }}
+              >
+                {fallbackVisuals[i]?.content}
+              </div>
+            )}
 
             <div className="project-body">
               <h3 className="project-name">{project.name}</h3>
