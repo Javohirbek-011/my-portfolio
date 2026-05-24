@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="nav-right">
         {/* Resume button */}
         <a
-          href="/Javohirbek_CV.pdf"
+          href="/Javohirbek_CV.zip"
           download
           target="_blank"
           rel="noopener noreferrer"

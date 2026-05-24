@@ -73,7 +73,7 @@ export default function Hero() {
           </a>
           <a href="#contact" className="btn-outline">{t.hero.btnContact}</a>
           <a
-            href="/Javohirbek_CV.pdf"
+            href="/Javohirbek_CV.zip"
             download
             target="_blank"
             rel="noopener noreferrer"
