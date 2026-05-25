@@ -17,7 +17,9 @@ export default function About() {
 
       <div className="about-grid reveal">
         <div className="about-visual">
-          <div className="about-avatar">JT</div>
+          <div className="about-avatar">
+            <img src="/avatar.png" alt="Javohirbek Tojaliyev" className="about-avatar-img" />
+          </div>
           <div className="about-code">
             <span>const dev = {'{'}</span>
             <span>&nbsp;&nbsp;name: "Javohirbek",</span>

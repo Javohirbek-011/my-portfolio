@@ -53,7 +53,9 @@ export default function Hero() {
         {/* Avatar with animated ring */}
         <div className="hero-avatar-wrap">
           <div className="hero-avatar-ring"></div>
-          <div className="hero-avatar">JT</div>
+          <div className="hero-avatar">
+            <img src="/avatar.png" alt="Javohirbek Tojaliyev" className="hero-avatar-img" />
+          </div>
         </div>
 
         <p className="hero-greeting">{t.hero.greeting}</p>
