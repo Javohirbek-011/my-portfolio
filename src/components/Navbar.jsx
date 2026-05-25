@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLang } from '../context/LanguageContext';
+import { useSound } from '../hooks/useSound';
 import { HiDownload } from 'react-icons/hi';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
   const { lang, changeLang, t } = useLang();
+  const { playTick, playClick, playSwoosh } = useSound();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,14 +28,18 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       {/* Premium logo */}
-      <a href="#hero" className="nav-logo">
+      <a href="#hero" className="nav-logo" onMouseEnter={playTick} onClick={playClick}>
         <span className="nav-logo-box">JT</span>
       </a>
 
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {links.map((link) => (
           <li key={link.key}>
-            <a href={link.href} onClick={() => setMenuOpen(false)}>
+            <a
+              href={link.href}
+              onMouseEnter={playTick}
+              onClick={() => { playClick(); setMenuOpen(false); }}
+            >
               {t.nav[link.key]}
             </a>
           </li>
@@ -48,6 +54,8 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           className="resume-btn"
+          onMouseEnter={playTick}
+          onClick={playClick}
         >
           <HiDownload /> Resume
         </a>
@@ -57,13 +65,17 @@ export default function Navbar() {
             <button
               key={l}
               className={`lang-btn ${lang === l ? 'active' : ''}`}
-              onClick={() => changeLang(l)}
+              onMouseEnter={playTick}
+              onClick={() => { playSwoosh(); changeLang(l); }}
             >
               {l.toUpperCase()}
             </button>
           ))}
         </div>
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          className="hamburger"
+          onClick={() => { playClick(); setMenuOpen(!menuOpen); }}
+        >
           {menuOpen ? '✕' : '☰'}
         </button>
       </div>

@@ -1,5 +1,6 @@
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useSound } from '../hooks/useSound';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 import '../styles/Contact.css';
@@ -40,6 +41,7 @@ const contactItems = [
 export default function Contact() {
   useScrollReveal();
   const { t } = useLang();
+  const { playTick, playClick } = useSound();
 
   return (
     <section className="section" id="contact">
@@ -56,6 +58,8 @@ export default function Contact() {
             className="contact-card"
             target={item.external ? '_blank' : undefined}
             rel={item.external ? 'noopener noreferrer' : undefined}
+            onMouseEnter={playTick}
+            onClick={playClick}
           >
             <span className="contact-icon" style={{ color: item.color }}>
               {item.icon}

@@ -1,9 +1,9 @@
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useSound } from '../hooks/useSound';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import '../styles/Projects.css';
 
-// Fallback visuals for projects without screenshots
 const fallbackVisuals = [
   { gradient: 'linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%)', content: <span className="project-code-icon">&lt;/&gt;</span> },
   { gradient: 'linear-gradient(135deg, #0F172A 0%, #1F1035 100%)', content: <span className="project-emoji">🛍️</span> },
@@ -13,6 +13,7 @@ const fallbackVisuals = [
 export default function Projects() {
   useScrollReveal();
   const { t } = useLang();
+  const { playTick, playClick } = useSound();
 
   return (
     <section className="section" id="projects">
@@ -23,8 +24,11 @@ export default function Projects() {
 
       <div className="projects-grid">
         {t.projects.items.map((project, i) => (
-          <div key={i} className="project-card reveal">
-
+          <div
+            key={i}
+            className="project-card reveal"
+            onMouseEnter={playTick}
+          >
             {/* Screenshot or fallback */}
             {project.image ? (
               <a
@@ -32,6 +36,7 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="project-image project-image-link"
+                onClick={playClick}
               >
                 <img
                   src={project.image}
@@ -64,6 +69,8 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="project-gh-link"
                     title="GitHub"
+                    onMouseEnter={playTick}
+                    onClick={playClick}
                   >
                     <FaGithub />
                   </a>
@@ -74,6 +81,8 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-live-link"
+                    onMouseEnter={playTick}
+                    onClick={playClick}
                   >
                     <FaExternalLinkAlt /> {t.projects.btnLive}
                   </a>
@@ -90,6 +99,8 @@ export default function Projects() {
           target="_blank"
           rel="noopener noreferrer"
           className="view-all-btn"
+          onMouseEnter={playTick}
+          onClick={playClick}
         >
           <FaGithub /> View All Projects
         </a>

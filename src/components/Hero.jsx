@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useLang } from '../context/LanguageContext';
+import { useSound } from '../hooks/useSound';
 import { HiDownload } from 'react-icons/hi';
 import { FaGithub } from 'react-icons/fa';
 import '../styles/Hero.css';
 
 export default function Hero() {
   const { t } = useLang();
+  const { playTick, playClick, playTypeTick } = useSound();
   const [displayed, setDisplayed] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -19,6 +21,7 @@ export default function Hero() {
     const timer = setTimeout(() => {
       if (!isDeleting && charIndex <= current.length) {
         setDisplayed(current.slice(0, charIndex));
+        playTypeTick();
         setCharIndex((c) => c + 1);
       } else if (!isDeleting && charIndex > current.length) {
         setTimeout(() => setIsDeleting(true), 1400);
@@ -32,7 +35,7 @@ export default function Hero() {
     }, speed);
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, roleIndex, t.hero.roles]);
+  }, [charIndex, isDeleting, roleIndex, t.hero.roles, playTypeTick]);
 
   return (
     <section className="hero" id="hero">
@@ -70,10 +73,17 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
+              onMouseEnter={playTick}
+              onClick={playClick}
             >
               <FaGithub /> {t.hero.btnGithub}
             </a>
-            <a href="#contact" className="btn-outline">
+            <a
+              href="#contact"
+              className="btn-outline"
+              onMouseEnter={playTick}
+              onClick={playClick}
+            >
               {t.hero.btnContact}
             </a>
             <a
@@ -82,6 +92,8 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline btn-resume"
+              onMouseEnter={playTick}
+              onClick={playClick}
             >
               <HiDownload /> Resume
             </a>

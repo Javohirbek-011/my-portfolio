@@ -1,5 +1,6 @@
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useSound } from '../hooks/useSound';
 import '../styles/Skills.css';
 
 const skillGroups = [
@@ -28,6 +29,7 @@ const codeLines = [
 export default function Skills() {
   useScrollReveal();
   const { t } = useLang();
+  const { playTick } = useSound();
 
   return (
     <section className="section" id="skills">
@@ -44,7 +46,13 @@ export default function Skills() {
               <p className="skill-group-label">{group.label}</p>
               <div className="skills-grid">
                 {group.skills.map((skill) => (
-                  <div key={skill} className="skill-badge">{skill}</div>
+                  <div
+                    key={skill}
+                    className="skill-badge"
+                    onMouseEnter={playTick}
+                  >
+                    {skill}
+                  </div>
                 ))}
               </div>
             </div>
