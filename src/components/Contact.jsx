@@ -58,7 +58,6 @@ export default function Contact() {
             className="contact-card"
             target={item.external ? '_blank' : undefined}
             rel={item.external ? 'noopener noreferrer' : undefined}
-            onMouseEnter={playTick}
             onClick={playClick}
           >
             <span className="contact-icon" style={{ color: item.color }}>

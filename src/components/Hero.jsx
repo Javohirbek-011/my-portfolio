@@ -73,7 +73,6 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
-              onMouseEnter={playTick}
               onClick={playClick}
             >
               <FaGithub /> {t.hero.btnGithub}
@@ -81,7 +80,6 @@ export default function Hero() {
             <a
               href="#contact"
               className="btn-outline"
-              onMouseEnter={playTick}
               onClick={playClick}
             >
               {t.hero.btnContact}
@@ -92,7 +90,6 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline btn-resume"
-              onMouseEnter={playTick}
               onClick={playClick}
             >
               <HiDownload /> Resume

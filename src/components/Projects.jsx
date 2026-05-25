@@ -27,7 +27,6 @@ export default function Projects() {
           <div
             key={i}
             className="project-card reveal"
-            onMouseEnter={playTick}
           >
             {/* Screenshot or fallback */}
             {project.image ? (
@@ -69,7 +68,6 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="project-gh-link"
                     title="GitHub"
-                    onMouseEnter={playTick}
                     onClick={playClick}
                   >
                     <FaGithub />
@@ -81,7 +79,6 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-live-link"
-                    onMouseEnter={playTick}
                     onClick={playClick}
                   >
                     <FaExternalLinkAlt /> {t.projects.btnLive}
@@ -99,7 +96,6 @@ export default function Projects() {
           target="_blank"
           rel="noopener noreferrer"
           className="view-all-btn"
-          onMouseEnter={playTick}
           onClick={playClick}
         >
           <FaGithub /> View All Projects

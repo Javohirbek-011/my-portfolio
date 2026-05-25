@@ -49,7 +49,6 @@ export default function Skills() {
                   <div
                     key={skill}
                     className="skill-badge"
-                    onMouseEnter={playTick}
                   >
                     {skill}
                   </div>

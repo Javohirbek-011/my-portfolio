@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       {/* Premium logo */}
-      <a href="#hero" className="nav-logo" onMouseEnter={playTick} onClick={playClick}>
+      <a href="#hero" className="nav-logo" onClick={playClick}>
         <span className="nav-logo-box">JT</span>
       </a>
 
@@ -37,7 +37,6 @@ export default function Navbar() {
           <li key={link.key}>
             <a
               href={link.href}
-              onMouseEnter={playTick}
               onClick={() => { playClick(); setMenuOpen(false); }}
             >
               {t.nav[link.key]}
@@ -54,7 +53,6 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           className="resume-btn"
-          onMouseEnter={playTick}
           onClick={playClick}
         >
           <HiDownload /> Resume
@@ -65,7 +63,7 @@ export default function Navbar() {
             <button
               key={l}
               className={`lang-btn ${lang === l ? 'active' : ''}`}
-              onMouseEnter={playTick}
+              onMouseEnter={undefined}
               onClick={() => { playSwoosh(); changeLang(l); }}
             >
               {l.toUpperCase()}

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSound } from './useSound';
 
 export function useScrollReveal() {
-  const { playWhoosh } = useSound();
+  const { playReveal } = useSound();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -10,7 +10,7 @@ export function useScrollReveal() {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !entry.target.classList.contains('revealed')) {
             entry.target.classList.add('revealed');
-            playWhoosh();
+            playReveal();
           }
         });
       },
@@ -21,5 +21,5 @@ export function useScrollReveal() {
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [playWhoosh]);
+  }, [playReveal]);
 }
