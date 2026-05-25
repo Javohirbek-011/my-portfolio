@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLang } from '../context/LanguageContext';
 import { HiDownload } from 'react-icons/hi';
+import { FaGithub } from 'react-icons/fa';
 import '../styles/Hero.css';
 
 export default function Hero() {
@@ -20,7 +21,7 @@ export default function Hero() {
         setDisplayed(current.slice(0, charIndex));
         setCharIndex((c) => c + 1);
       } else if (!isDeleting && charIndex > current.length) {
-        setTimeout(() => setIsDeleting(true), 1200);
+        setTimeout(() => setIsDeleting(true), 1400);
       } else if (isDeleting && charIndex > 0) {
         setDisplayed(current.slice(0, charIndex - 1));
         setCharIndex((c) => c - 1);
@@ -37,52 +38,76 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero-grid"></div>
 
-      <div className="hero-code hero-code-tl">
-        <span>&lt;div className=</span>
-      </div>
-      <div className="hero-code hero-code-tr">
-        <span>useState()</span>
-      </div>
-      <div className="hero-code hero-code-bl">
-        <span>import React</span>
-      </div>
+      {/* Ambient glow blobs */}
+      <div className="hero-blob hero-blob-1"></div>
+      <div className="hero-blob hero-blob-2"></div>
 
-      <div className="hero-content">
-        <div className="hero-tag">// FRONTEND DEVELOPER</div>
+      <div className="hero-inner">
+        {/* LEFT — text content */}
+        <div className="hero-content">
+          <div className="hero-tag">
+            <span className="hero-tag-dot"></span>
+            // FRONTEND DEVELOPER
+          </div>
 
-        {/* Avatar with animated ring */}
-        <div className="hero-avatar-wrap">
-          <div className="hero-avatar-ring"></div>
-          <div className="hero-avatar">
-            <img src="/avatar.png" alt="Javohirbek Tojaliyev" className="hero-avatar-img" />
+          <h1 className="hero-name">
+            {t.hero.greeting}<br />
+            <span className="hero-name-first">Javohirbek</span>{' '}
+            <span className="hero-name-last">Tojaliyev</span>
+          </h1>
+
+          <div className="hero-typing">
+            <span className="hero-typing-prefix">&gt; </span>
+            {displayed}
+            <span className="cursor">|</span>
+          </div>
+
+          <p className="hero-bio">{t.hero.bio}</p>
+
+          <div className="hero-btns">
+            <a
+              href="https://github.com/Javohirbek-011"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              <FaGithub /> {t.hero.btnGithub}
+            </a>
+            <a href="#contact" className="btn-outline">
+              {t.hero.btnContact}
+            </a>
+            <a
+              href="/Javohirbek_CV.zip"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline btn-resume"
+            >
+              <HiDownload /> Resume
+            </a>
+          </div>
+
+          {/* Scroll hint */}
+          <div className="hero-scroll">
+            <span className="hero-scroll-line"></span>
+            <span className="hero-scroll-text">scroll</span>
           </div>
         </div>
 
-        <p className="hero-greeting">{t.hero.greeting}</p>
-        <h1 className="hero-name">Javohirbek <span>Tojaliyev</span></h1>
-        <div className="hero-typing">
-          {displayed}<span className="cursor">|</span>
-        </div>
-        <p className="hero-bio">{t.hero.bio}</p>
-        <div className="hero-btns">
-          <a
-            href="https://github.com/Javohirbek-011"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            {t.hero.btnGithub} →
-          </a>
-          <a href="#contact" className="btn-outline">{t.hero.btnContact}</a>
-          <a
-            href="/Javohirbek_CV.zip"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline btn-resume"
-          >
-            <HiDownload /> Resume
-          </a>
+        {/* RIGHT — photo */}
+        <div className="hero-photo-wrap">
+          <div className="hero-photo-ring hero-photo-ring-outer"></div>
+          <div className="hero-photo-ring hero-photo-ring-inner"></div>
+          <div className="hero-photo-frame">
+            <img src="/avatar.png" alt="Javohirbek Tojaliyev" className="hero-photo" />
+          </div>
+          {/* Floating badges */}
+          <div className="hero-badge hero-badge-tl">
+            <span>React.js</span>
+          </div>
+          <div className="hero-badge hero-badge-br">
+            <span>Frontend Dev</span>
+          </div>
         </div>
       </div>
     </section>
